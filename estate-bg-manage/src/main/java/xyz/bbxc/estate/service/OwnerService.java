@@ -43,4 +43,6 @@ public interface OwnerService {
      * @return : com.heima.estatemanagement.domain.owner
      */
     Owner findByID(Integer id);
+
+    List<Owner> searchAllReg();
 }

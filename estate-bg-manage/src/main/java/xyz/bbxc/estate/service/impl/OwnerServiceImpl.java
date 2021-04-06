@@ -22,7 +22,7 @@ import java.util.Map;
  */
 @Service
 public class OwnerServiceImpl implements OwnerService {
-    
+
     @Autowired
     private OwnerMapper ownerMapper;
 
@@ -33,33 +33,33 @@ public class OwnerServiceImpl implements OwnerService {
         int pageNum = 1;
         int pageSize = 10;
         //2.判断请求条件是否为空，不为空则根据searchMap中条件，封装SQL查询条件
-        if(searchMap != null){
+        if (searchMap != null) {
             Example.Criteria criteria = example.createCriteria();
             //设置查询条件为业主
-            criteria.andEqualTo("type","0");
+            criteria.andEqualTo("type", "0");
             //大于开始时间
-            if(StringUtil.isNotEmpty((String)searchMap.get("startTime"))){
-                criteria.andGreaterThanOrEqualTo("create_time",searchMap.get("startTime"));
+            if (StringUtil.isNotEmpty((String) searchMap.get("startTime"))) {
+                criteria.andGreaterThanOrEqualTo("create_time", searchMap.get("startTime"));
             }
             //小于结束时间
-            if(StringUtil.isNotEmpty((String)searchMap.get("endTime"))){
-                criteria.andLessThanOrEqualTo("update_time",searchMap.get("endTime"));
+            if (StringUtil.isNotEmpty((String) searchMap.get("endTime"))) {
+                criteria.andLessThanOrEqualTo("update_time", searchMap.get("endTime"));
             }
             //根据名称模糊查询
-            if(StringUtil.isNotEmpty((String)searchMap.get("name"))){
+            if (StringUtil.isNotEmpty((String) searchMap.get("name"))) {
                 String name = (String) searchMap.get("name");
-                criteria.andLike("name","%"+name.trim()+"%");
+                criteria.andLike("name", "%" + name.trim() + "%");
             }
             //分页条件
-            if(searchMap.get("pageNum") !=null){
-                pageNum = (Integer)searchMap.get("pageNum");
+            if (searchMap.get("pageNum") != null) {
+                pageNum = (Integer) searchMap.get("pageNum");
             }
-            if(searchMap.get("pageSize") !=null){
-                pageSize = (Integer)searchMap.get("pageSize");
+            if (searchMap.get("pageSize") != null) {
+                pageSize = (Integer) searchMap.get("pageSize");
             }
         }
         //使用PageHelper插件拼接分页条件（注意：）
-        PageHelper.startPage(pageNum,pageSize);
+        PageHelper.startPage(pageNum, pageSize);
         Page<Owner> owner = (Page<Owner>) ownerMapper.selectByExample(example);
         return owner;
     }
@@ -71,33 +71,33 @@ public class OwnerServiceImpl implements OwnerService {
         int pageNum = 1;
         int pageSize = 10;
         //2.判断请求条件是否为空，不为空则根据searchMap中条件，封装SQL查询条件
-        if(searchMap != null){
+        if (searchMap != null) {
             Example.Criteria criteria = example.createCriteria();
             //设置查询条件为业主
-            criteria.andEqualTo("type","1");
+            criteria.andEqualTo("type", "1");
             //大于开始时间
-            if(StringUtil.isNotEmpty((String)searchMap.get("startTime"))){
-                criteria.andGreaterThanOrEqualTo("create_time",searchMap.get("startTime"));
+            if (StringUtil.isNotEmpty((String) searchMap.get("startTime"))) {
+                criteria.andGreaterThanOrEqualTo("create_time", searchMap.get("startTime"));
             }
             //小于结束时间
-            if(StringUtil.isNotEmpty((String)searchMap.get("endTime"))){
-                criteria.andLessThanOrEqualTo("update_time",searchMap.get("endTime"));
+            if (StringUtil.isNotEmpty((String) searchMap.get("endTime"))) {
+                criteria.andLessThanOrEqualTo("update_time", searchMap.get("endTime"));
             }
             //根据名称模糊查询
-            if(StringUtil.isNotEmpty((String)searchMap.get("name"))){
+            if (StringUtil.isNotEmpty((String) searchMap.get("name"))) {
                 String name = (String) searchMap.get("name");
-                criteria.andLike("name","%"+name.trim()+"%");
+                criteria.andLike("name", "%" + name.trim() + "%");
             }
             //分页条件
-            if(searchMap.get("pageNum") !=null){
-                pageNum = (Integer)searchMap.get("pageNum");
+            if (searchMap.get("pageNum") != null) {
+                pageNum = (Integer) searchMap.get("pageNum");
             }
-            if(searchMap.get("pageSize") !=null){
-                pageSize = (Integer)searchMap.get("pageSize");
+            if (searchMap.get("pageSize") != null) {
+                pageSize = (Integer) searchMap.get("pageSize");
             }
         }
         //使用PageHelper插件拼接分页条件（注意：）
-        PageHelper.startPage(pageNum,pageSize);
+        PageHelper.startPage(pageNum, pageSize);
         Page<Owner> owner = (Page<Owner>) ownerMapper.selectByExample(example);
         return owner;
     }
@@ -129,6 +129,15 @@ public class OwnerServiceImpl implements OwnerService {
     @Transactional
     public Owner findByID(Integer id) {
         return ownerMapper.selectByPrimaryKey(id);
+    }
+
+    @Override
+    public List<Owner> searchAllReg() {
+        Example example = new Example(Owner.class);
+        Example.Criteria criteria = example.createCriteria();
+        //设置查询条件为检修员
+        criteria.andEqualTo("type", "1");
+        return ownerMapper.selectByExample(example);
     }
 
 }

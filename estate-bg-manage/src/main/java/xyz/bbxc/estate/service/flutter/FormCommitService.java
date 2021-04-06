@@ -20,4 +20,6 @@ public interface FormCommitService {
     int add(Repaired repaired);
 
     public List<Repaired> searchAll();
+
+    List<Repaired> searchAllByName(String name);
 }

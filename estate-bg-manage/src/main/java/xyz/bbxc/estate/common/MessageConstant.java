@@ -53,5 +53,15 @@ public class MessageConstant {
     public static final String HOUSE_PIC_DEL_SUCCESS = "房产缩略图删除成功！";
     public static final String HOUSE_FIND_BY_ID_SUCCESS = "根据主键获取房产对象成功！";
     public static final String HOUSE_UPDATE_STATUS_SUCCESS = "房产状态信息更新成功！";
+
+    //---------------------------检修（Repaired）操作消息提示信息---------------------------------------
+    public static final String REPAIRED_SEARCH_SUCCESS="查询检修列表信息成功！";
+    public static final String REPAIRED_ADD_SUCCESS="新增检修信息成功！";
+    public static final String REPAIRED_UPDATE_SUCCESS="修改检修信息成功！";
+    public static final String REPAIRED_DELETE_SUCCESS="删除检修信息成功！";
+    public static final String REPAIRED_PIC_UPLOAD_SUCCESS="检修缩略图上传成功！";
+    public static final String REPAIRED_PIC_DEL_SUCCESS ="检修缩略图删除成功！";
+    public static final String REPAIRED_FIND_BY_ID_SUCCESS ="根据主键获取检修对象成功！";
+    public static final String REPAIRED_UPDATE_STATUS_SUCCESS ="检修状态信息更新成功！";
     
 }

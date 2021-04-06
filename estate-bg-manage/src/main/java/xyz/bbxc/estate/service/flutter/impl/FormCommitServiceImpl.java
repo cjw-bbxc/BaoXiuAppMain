@@ -37,4 +37,11 @@ public class FormCommitServiceImpl implements FormCommitService {
     public List<Repaired> searchAll() {
         return formCommitMapper.selectAll();
     }
+
+    @Override
+    public List<Repaired> searchAllByName(String name) {
+        Repaired repaired = new Repaired();
+        repaired.setRepairManName(name);
+        return formCommitMapper.select(repaired);
+    }
 }

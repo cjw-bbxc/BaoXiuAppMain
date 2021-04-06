@@ -2,7 +2,6 @@ package xyz.bbxc.estate.damain;
 
 import javax.persistence.Id;
 import javax.persistence.Table;
-import java.util.Date;
 
 /**
  * @Classname Repaired
@@ -13,7 +12,7 @@ import java.util.Date;
 @Table(name = "tb_repaired")
 public class Repaired {
     @Id
-    private String id;
+    private Integer id;
     private String name;
     private String address;
     private String telephone;
@@ -22,12 +21,21 @@ public class Repaired {
     private String picture;
     private String status;
     private String create_time;
+    private String repairManName;
 
-    public String getId() {
+    public String getRepairManName() {
+        return repairManName;
+    }
+
+    public void setRepairManName(String repairManName) {
+        this.repairManName = repairManName;
+    }
+
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -98,7 +106,7 @@ public class Repaired {
     @Override
     public String toString() {
         return "Repaired{" +
-                "id=" + id +
+                "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", address='" + address + '\'' +
                 ", telephone='" + telephone + '\'' +
@@ -107,20 +115,7 @@ public class Repaired {
                 ", picture='" + picture + '\'' +
                 ", status='" + status + '\'' +
                 ", create_time='" + create_time + '\'' +
-                '}';
-    }
-
-    public String tojson() {
-        return "{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", address='" + address + '\'' +
-                ", telephone='" + telephone + '\'' +
-                ", type='" + type + '\'' +
-                ", description='" + description + '\'' +
-                ", picture='" + picture + '\'' +
-                ", status='" + status + '\'' +
-                ", create_time='" + create_time + '\'' +
+                ", repairManName='" + repairManName + '\'' +
                 '}';
     }
 }

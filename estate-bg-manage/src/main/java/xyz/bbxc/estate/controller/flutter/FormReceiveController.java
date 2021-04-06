@@ -52,30 +52,37 @@ public class FormReceiveController {
     }
 
     /**
-     * 返回数据库中所有的数据。使用JSON返回
+     * 接收检修员名称，返回数据库中所有与该名称有关的的数据。使用JSON返回
      *
      * @param request
      * @param response
      * @throws IOException
      */
-    @RequestMapping(value = "/List")
-    public void FormList(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    @RequestMapping(value = "/ListAll")
+    public void ListAll(HttpServletRequest request, HttpServletResponse response) throws IOException {
         List<Repaired> repairers = formCommitService.searchAll();
         response.setCharacterEncoding("utf-8");
         for (int i = 0; i < repairers.size(); i++) {
             System.out.println(repairers.get(i));
         }
-//        Map<String, Repaired> returnMap = new HashMap<>();
-//        for (int i = 0; i < repairers.size(); i++) {
-//            returnMap.put("\"" + i + "\"", repairers.get(i));
-//        }
-//        JSONObject returnJson = JSONObject.fromObject(repairers);
-//        JSONArray jsonArray = JSONArray.fromObject(returnMap);
+
         JSONArray jsonArray = JSONArray.fromObject(repairers);
 
         System.out.println(jsonArray);
         response.getWriter().println(jsonArray);
     }
 
+    @RequestMapping(value = "/List")
+    public void List(@RequestBody String name, HttpServletRequest request, HttpServletResponse response) throws IOException {
+        List<Repaired> repairers = formCommitService.searchAllByName(name);
+        response.setCharacterEncoding("utf-8");
+        for (int i = 0; i < repairers.size(); i++) {
+            System.out.println(repairers.get(i));
+        }
 
+        JSONArray jsonArray = JSONArray.fromObject(repairers);
+
+        System.out.println(jsonArray);
+        response.getWriter().println(jsonArray);
+    }
 }

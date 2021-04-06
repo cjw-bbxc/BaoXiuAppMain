@@ -45,6 +45,14 @@ public class OwnerController {
         return new PageResult(true, StatusCode.OK, MessageConstant.OWNER_SEARCH_SUCCESS, ownerList, totalCount);
     }
 
+    @RequestMapping("/searchAllReg")
+    public Result searchAllReg(){
+        List<Owner> ownerList = ownerService.searchAllReg();
+//        System.out.println(ownerList);
+        return new Result(true, StatusCode.OK, MessageConstant.OWNER_SEARCH_SUCCESS, ownerList);
+    }
+
+
     @RequestMapping("/add")
     public Result add(@RequestBody Owner owner) {
         ownerService.add(owner);
