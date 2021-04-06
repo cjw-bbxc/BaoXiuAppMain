@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/BaoXiuAppMain.iml" filepath="$PROJECT_DIR$/BaoXiuAppMain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/estate-bg-manage/estate-bg-manage.iml" filepath="$PROJECT_DIR$/estate-bg-manage/estate-bg-manage.iml" />
+    </modules>
+  </component>
+</project>
