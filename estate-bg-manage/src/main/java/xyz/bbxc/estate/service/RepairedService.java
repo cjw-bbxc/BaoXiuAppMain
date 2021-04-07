@@ -50,4 +50,7 @@ public interface RepairedService {
      */
     Repaired findByID(Integer id);
 
+    void repairUpdateById(Integer id);
+
+    void ownerUpdateById(Integer id);
 }

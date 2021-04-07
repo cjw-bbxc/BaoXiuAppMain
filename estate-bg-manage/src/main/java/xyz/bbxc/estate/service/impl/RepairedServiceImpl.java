@@ -9,6 +9,7 @@ import tk.mybatis.mapper.util.StringUtil;
 import xyz.bbxc.estate.damain.Repaired;
 import xyz.bbxc.estate.dao.RepairedMapper;
 import xyz.bbxc.estate.service.RepairedService;
+import xyz.bbxc.estate.util.DateUtils;
 
 import java.util.List;
 import java.util.Map;
@@ -63,6 +64,7 @@ public class RepairedServiceImpl implements RepairedService {
 
     @Override
     public Boolean add(Repaired repaired) {
+        repaired.setCreate_time(DateUtils.getDate());
         repairedMapper.insertSelective(repaired);
         return true;
     }
@@ -90,6 +92,21 @@ public class RepairedServiceImpl implements RepairedService {
     public Repaired findByID(Integer id) {
         Repaired repaired = repairedMapper.selectByPrimaryKey(id);
         return repaired;
+    }
+
+    @Override
+    public void repairUpdateById(Integer id) {
+        Repaired repaired = repairedMapper.selectByPrimaryKey(id);
+        repaired.setStatus("2");
+        repairedMapper.updateByPrimaryKeySelective(repaired);
+    }
+
+    @Override
+    public void ownerUpdateById(Integer id) {
+        Repaired repaired = repairedMapper.selectByPrimaryKey(id);
+        System.out.println("repaired:" + repaired);
+        repaired.setStatus("3");
+        repairedMapper.updateByPrimaryKeySelective(repaired);
     }
 
 }

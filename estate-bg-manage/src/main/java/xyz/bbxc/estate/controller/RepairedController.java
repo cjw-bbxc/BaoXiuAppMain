@@ -71,4 +71,16 @@ public class RepairedController {
         repairedService.deleteSelect(ids);
         return new Result(true, StatusCode.OK, MessageConstant.REPAIRED_DELETE_SUCCESS);
     }
+
+    @RequestMapping("/repairUpdateById")
+    public void repairUpdateById(@RequestBody Integer id) {
+        repairedService.repairUpdateById(id);
+    }
+
+    @RequestMapping("/ownerUpdateById")
+    public void ownerUpdateById(@RequestBody Integer id) {
+        System.out.println("1111111");
+        repairedService.ownerUpdateById(id);
+    }
+
 }

@@ -8,9 +8,12 @@ package xyz.bbxc.estate.service.flutter.impl;/**
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import xyz.bbxc.estate.damain.Owner;
 import xyz.bbxc.estate.damain.Repaired;
 import xyz.bbxc.estate.dao.flutter.FormCommitMapper;
+import xyz.bbxc.estate.dao.flutter.UserSearchMapper;
 import xyz.bbxc.estate.service.flutter.FormCommitService;
+import xyz.bbxc.estate.service.flutter.UserSearchInfoService;
 
 import java.util.List;
 
@@ -44,4 +47,13 @@ public class FormCommitServiceImpl implements FormCommitService {
         repaired.setRepairManName(name);
         return formCommitMapper.select(repaired);
     }
+
+    @Override
+    public List<Repaired> searchAllByOwnerName(String name) {
+        Repaired repaired = new Repaired();
+        repaired.setName(name);
+        return formCommitMapper.select(repaired);
+    }
+
+
 }

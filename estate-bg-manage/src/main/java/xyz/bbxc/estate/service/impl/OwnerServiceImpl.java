@@ -11,6 +11,7 @@ import xyz.bbxc.estate.damain.Owner;
 import xyz.bbxc.estate.dao.OwnerMapper;
 import xyz.bbxc.estate.service.OwnerService;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -105,6 +106,7 @@ public class OwnerServiceImpl implements OwnerService {
     @Override
     @Transactional
     public Boolean add(Owner owner) {
+        owner.setUpdate_time(new Date());
         ownerMapper.insertSelective(owner);
         return true;
     }

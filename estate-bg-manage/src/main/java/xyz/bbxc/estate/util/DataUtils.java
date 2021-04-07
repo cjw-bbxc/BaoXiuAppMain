@@ -1,5 +1,6 @@
 package xyz.bbxc.estate.util;
 
+import xyz.bbxc.estate.damain.Owner;
 import xyz.bbxc.estate.damain.Repaired;
 
 import java.util.Date;
@@ -24,6 +25,13 @@ public class DataUtils {
         repaired.setStatus("0");
         repaired.setCreate_time(DateUtils.getDate());
         return repaired;
+    }
+
+    public static Owner MapToEntryOwn(Map formMap) {
+        Owner owner = new Owner();
+        owner.setName((String) formMap.get("name"));
+        owner.setTelephone((String) formMap.get("telephone"));
+        return owner;
     }
 
 }

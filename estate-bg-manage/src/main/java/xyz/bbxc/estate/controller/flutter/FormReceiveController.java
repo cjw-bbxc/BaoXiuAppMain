@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import xyz.bbxc.estate.damain.Owner;
 import xyz.bbxc.estate.damain.Repaired;
 import xyz.bbxc.estate.service.flutter.FormCommitService;
 import xyz.bbxc.estate.util.DataUtils;
@@ -62,26 +63,28 @@ public class FormReceiveController {
     public void ListAll(HttpServletRequest request, HttpServletResponse response) throws IOException {
         List<Repaired> repairers = formCommitService.searchAll();
         response.setCharacterEncoding("utf-8");
-        for (int i = 0; i < repairers.size(); i++) {
-            System.out.println(repairers.get(i));
-        }
-
         JSONArray jsonArray = JSONArray.fromObject(repairers);
 
         System.out.println(jsonArray);
         response.getWriter().println(jsonArray);
     }
 
-    @RequestMapping(value = "/List")
-    public void List(@RequestBody String name, HttpServletRequest request, HttpServletResponse response) throws IOException {
+    @RequestMapping(value = "/ListRepairers")
+    public void ListRepairers(@RequestBody String name, HttpServletRequest request, HttpServletResponse response) throws IOException {
         List<Repaired> repairers = formCommitService.searchAllByName(name);
         response.setCharacterEncoding("utf-8");
-        for (int i = 0; i < repairers.size(); i++) {
-            System.out.println(repairers.get(i));
-        }
 
         JSONArray jsonArray = JSONArray.fromObject(repairers);
+        System.out.println(jsonArray);
+        response.getWriter().println(jsonArray);
+    }
 
+    @RequestMapping(value = "/ListOwners")
+    public void ListOwners(@RequestBody String name, HttpServletRequest request, HttpServletResponse response) throws IOException {
+        List<Repaired> repairers = formCommitService.searchAllByOwnerName(name);
+        response.setCharacterEncoding("utf-8");
+
+        JSONArray jsonArray = JSONArray.fromObject(repairers);
         System.out.println(jsonArray);
         response.getWriter().println(jsonArray);
     }

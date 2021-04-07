@@ -94,7 +94,7 @@
 						<td>{{repaired.type}}</td>
 						<td>{{repaired.description}}</td>
 						<td>
-							<img :src="'http://localhost/estate'+repaired.thumbnail" width="50" height="30" alt="">
+							<img :src="'http://localhost/estate/'+repaired.picture" width="50" height="30" alt="">
 						</td>
 						<td>{{repaired.status == 0 ? '待受理' : repaired.status == 1 ? '已派遣':repaired.status == 2 ? '已检修': '已完成'}}</td>
 						<td>{{repaired.create_time}}</td>
@@ -112,7 +112,7 @@
 				</tbody>
 			</table>
 			<el-pagination background @size-change="handleSizeChange" @current-change="handleCurrentChange" :page-size="searchMap.pageSize"
-			 layout="prev, pager, next,sizes" :page-sizes="[2,10,20]" style="text-align: right;" :total="total">
+			 layout="prev, pager, next,sizes" :page-sizes="[5]" style="text-align: right;" :total="total">
 			</el-pagination>
 		</div>
 		<script src="lib/layui/layui.js" charset="utf-8"></script>
@@ -133,13 +133,13 @@
 					repairedList: [],
 					repairedName: [],
 					selectIds: [],
-					total: 20,
+					total: 10,
 					searchMap: {
 						"startTime": "",
 						"endTime": "",
 						"name": "",
 						"pageNum": 1,
-						"pageSize": 2
+						"pageSize": 5
 					},
 					selectDate: ['', ''],
 					pickerOptions: {
