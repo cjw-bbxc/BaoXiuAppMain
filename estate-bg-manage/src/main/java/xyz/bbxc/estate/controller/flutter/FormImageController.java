@@ -39,9 +39,10 @@ public class FormImageController {
 		//获取当前项目所在绝对路径
 		String absolutePath = System.getProperty("user.dir");
 		//文件上传后所在绝对路径
-		String savePath = absolutePath+"/src/images/";
+//		String savePath = absolutePath+"/src/images/";
+		String savePath = "/www/wwwroot/image.wuye.bbxc.xyz/baoxiuapp/";
 		//保存在数据库的文件地址
-		String saveUrl = "/fileupload/baoxiu/";
+		String saveUrl = "/";
 		// 定义允许上传的文件扩展名
 		HashMap<String, String> extMap = new HashMap<String, String>();
 		extMap.put("image", "gif,jpg,jpeg,png,bmp");

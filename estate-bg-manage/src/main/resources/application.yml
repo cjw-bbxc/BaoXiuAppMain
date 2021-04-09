@@ -1,4 +1,9 @@
 server:
+  ssl:
+    key-store: 5459475_bbxc.xyz.pfx
+    key-store-password: kIj6H657
+    key-store-type: PKCS12
+    enabled: true
   port: 8888 #项目启动访问端口
 spring:
   application:

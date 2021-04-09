@@ -94,7 +94,7 @@
 						<td>{{repaired.type}}</td>
 						<td>{{repaired.description}}</td>
 						<td>
-							<img :src="'http://localhost/estate/'+repaired.picture" width="50" height="30" alt="">
+							<img :src="'http://baoxiu.bbxc.xyz:5032/'+repaired.picture" width="50" height="30" alt="">
 						</td>
 						<td>{{repaired.status == 0 ? '待受理' : repaired.status == 1 ? '已派遣':repaired.status == 2 ? '已检修': '已完成'}}</td>
 						<td>{{repaired.create_time}}</td>

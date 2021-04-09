@@ -18,7 +18,7 @@ public class DataUtils {
         Repaired repaired = new Repaired();
         repaired.setName((String) formMap.get("username"));
         repaired.setAddress((String) formMap.get("address"));
-        repaired.setTelephone((String) formMap.get("phone"));
+        repaired.setTelephone((String) formMap.get("telephone"));
         repaired.setType((String) formMap.get("type"));
         repaired.setDescription((String) formMap.get("detail"));
         repaired.setPicture((String) formMap.get("picture"));

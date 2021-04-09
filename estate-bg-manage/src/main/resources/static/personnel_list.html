@@ -106,7 +106,10 @@
 						<td>{{owner.community_id}}</td>
 						<td>{{owner.house_id}}</td>
 						<td>{{owner.name}}</td>
-						<td>{{owner.picture}}</td>
+						<td>
+							<img :src="'http://baoxiu.bbxc.xyz:5032/'+owner.picture" width="50" height="30" alt="">
+						</td>
+<!--						<td>{{owner.picture}}</td>-->
 						<td>{{owner.id_card}}</td>
 						<td>{{owner.telephone}}</td>
 						<td>{{owner.profession}}</td>
