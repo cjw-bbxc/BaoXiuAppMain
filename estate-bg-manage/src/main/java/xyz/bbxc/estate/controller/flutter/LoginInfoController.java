@@ -118,4 +118,8 @@ public class LoginInfoController {
         }
     }
 
+    public void getOne(){
+
+    }
+
 }
