@@ -78,9 +78,7 @@ public class FormImageController {
 		Map<String, MultipartFile> fileMap = mRequest.getFileMap();
 		String fileName = null;
 		Iterator<Map.Entry<String, MultipartFile>> iter = fileMap.entrySet().iterator();
-		for (String s : fileMap.keySet()) {
 
-		}
 		for (Iterator<Map.Entry<String, MultipartFile>> it = fileMap.entrySet().iterator(); it.hasNext();) {
 			Map.Entry<String, MultipartFile> entry = it.next();
 			MultipartFile mFile = entry.getValue();

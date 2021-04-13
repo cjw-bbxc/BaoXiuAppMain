@@ -13,6 +13,11 @@ spring:
     url: jdbc:mysql://8.140.11.87:3306/baoxiuapp?useUnicode=true&characterEncoding=utf-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai
     username: root
     password: 123456
+    hikari:
+      minimum-idle: 3
+      maximum-pool-size: 100
+      max-lifetime: 30000
+      connection-test-query: SELECT 1
   servlet:
     multipart: #文件上传配置
       max-file-size: 10MB
