@@ -108,7 +108,7 @@
 						<td>{{community.total_households}}</td>
 						<td>{{community.greening_rate}}</td>
 						<td>
-							<img :src="'http://baoxiu.bbxc.xyz:5032/'+community.thumbnail" width="50" height="30" alt="">
+							<img :src="'https://baoxiu.bbxc.xyz/'+community.thumbnail" width="50" height="30" alt="">
 						</td>
 						<td>{{community.developer}}</td>
 						<td>{{community.estate_company}}</td>
@@ -128,7 +128,7 @@
 				</tbody>
 			</table>
 			<el-pagination background @size-change="handleSizeChange" @current-change="handleCurrentChange" :page-size="searchMap.pageSize"
-			 layout="prev, pager, next,sizes" :page-sizes="[2,10,20]" style="text-align: right;" :total="total">
+			 layout="prev, pager, next,sizes" :page-sizes="[5]" style="text-align: right;" :total="total">
 			</el-pagination>
 
 		</div>
@@ -155,7 +155,7 @@
 						"endTime": "",
 						"name": "",
 						"pageNum": 1,
-						"pageSize": 2
+						"pageSize": 5
 					},
 					selectDate: ['', ''],
 					pickerOptions: {

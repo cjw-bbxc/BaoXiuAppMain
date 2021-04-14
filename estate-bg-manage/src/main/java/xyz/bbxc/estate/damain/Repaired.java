@@ -22,6 +22,32 @@ public class Repaired {
     private String status;
     private String create_time;
     private String repairManName;
+    private String repairpicture;
+
+    @Override
+    public String toString() {
+        return "Repaired{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                ", telephone='" + telephone + '\'' +
+                ", type='" + type + '\'' +
+                ", description='" + description + '\'' +
+                ", picture='" + picture + '\'' +
+                ", status='" + status + '\'' +
+                ", create_time='" + create_time + '\'' +
+                ", repairManName='" + repairManName + '\'' +
+                ", repairpicture='" + repairpicture + '\'' +
+                '}';
+    }
+
+    public String getRepairpicture() {
+        return repairpicture;
+    }
+
+    public void setRepairpicture(String repairpicture) {
+        this.repairpicture = repairpicture;
+    }
 
     public String getRepairManName() {
         return repairManName;
@@ -103,19 +129,4 @@ public class Repaired {
         this.create_time = create_time;
     }
 
-    @Override
-    public String toString() {
-        return "Repaired{" +
-                "id='" + id + '\'' +
-                ", name='" + name + '\'' +
-                ", address='" + address + '\'' +
-                ", telephone='" + telephone + '\'' +
-                ", type='" + type + '\'' +
-                ", description='" + description + '\'' +
-                ", picture='" + picture + '\'' +
-                ", status='" + status + '\'' +
-                ", create_time='" + create_time + '\'' +
-                ", repairManName='" + repairManName + '\'' +
-                '}';
-    }
 }

@@ -45,4 +45,6 @@ public interface OwnerService {
     Owner findByID(Integer id);
 
     List<Owner> searchAllReg();
+
+    Boolean deleteSelect(List<Integer> ids);
 }

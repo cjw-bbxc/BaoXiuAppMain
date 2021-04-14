@@ -12,6 +12,7 @@ import xyz.bbxc.estate.common.Result;
 import xyz.bbxc.estate.common.StatusCode;
 import xyz.bbxc.estate.damain.Owner;
 import xyz.bbxc.estate.service.OwnerService;
+import xyz.bbxc.estate.util.DateUtils;
 
 import java.util.List;
 import java.util.Map;
@@ -53,11 +54,25 @@ public class OwnerController {
     }
 
 
-    @RequestMapping("/add")
-    public Result add(@RequestBody Owner owner) {
+    @RequestMapping("/user/add")
+    public Result userAdd(@RequestBody Owner owner) {
+        owner.setType("0");
+        owner.setBirthday(DateUtils.setBirth(owner.getId_card()));
         ownerService.add(owner);
+        System.out.println("useradd:"+owner);
         return new Result(true, StatusCode.OK, MessageConstant.OWNER_ADD_SUCCESS);
     }
+
+    @RequestMapping("/repair/add")
+    public Result repairAdd(@RequestBody Owner owner) {
+        owner.setType("1");
+        owner.setProfession("检修员");
+        owner.setBirthday(DateUtils.setBirth(owner.getId_card()));
+        ownerService.add(owner);
+        System.out.println("repair add:"+owner);
+        return new Result(true, StatusCode.OK, MessageConstant.OWNER_ADD_SUCCESS);
+    }
+
 
     @RequestMapping("/findById")
     public Result findById(@RequestParam("id") Integer id) {
@@ -75,6 +90,12 @@ public class OwnerController {
     public Result update(@RequestBody List<Integer> ids) {
         ownerService.delete(ids);
         return new Result(true, StatusCode.OK, MessageConstant.OWNER_DELETE_SUCCESS);
+    }
+
+    @RequestMapping("/delSelected")
+    public Result delSelected(@RequestBody List<Integer> ids) {
+        ownerService.deleteSelect(ids);
+        return new Result(true, StatusCode.OK, MessageConstant.COMMUNITY_DELETE_SUCCESS);
     }
 
 }

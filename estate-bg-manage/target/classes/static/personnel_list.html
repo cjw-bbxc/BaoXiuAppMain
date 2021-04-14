@@ -39,7 +39,7 @@
 			</div>
 
 			<xblock>
-				<button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon">&#xe640;</i>批量删除</button>
+				<button class="layui-btn layui-btn-danger" @click="delAll()"><i class="layui-icon">&#xe640;</i>批量删除</button>
 				<button class="layui-btn" @click="admin_add('添加','personnel_add.html','1000','600')"><i class="layui-icon">&#xe608;</i>添加</button>
 				<!-- <span class="x-right" style="line-height:40px">共有数据：<span class="layui-badge">3</span> 条</span> -->
 			</xblock>
@@ -47,16 +47,10 @@
 				<thead>
 					<tr>
 						<th>
-							<input type="checkbox" name="" value="">
+							<input type="checkbox" id="allChecked" :checked="selectIds.length===ownerList.length" @click="allChecked">
 						</th>
 						<th>
 							ID
-						</th>
-						<th>
-							所属小区
-						</th>
-						<th>
-							所属房产
 						</th>
 						<th>
 							成员名称
@@ -100,31 +94,30 @@
 
 					<tr v-for="(owner,index) in ownerList">
 						<td>
-							<input type="checkbox" value="1" name="">
+							<input type="checkbox" :id="'id'+owner.id" :value="owner.id" v-model="selectIds">
 						</td>
 						<td>{{owner.id}}</td>
-						<td>{{owner.community_id}}</td>
-						<td>{{owner.house_id}}</td>
 						<td>{{owner.name}}</td>
 						<td>
-							<img :src="'http://baoxiu.bbxc.xyz:5032/'+owner.picture" width="50" height="30" alt="">
+							<img :src="'https://baoxiu.bbxc.xyz/'+owner.picture" width="50" height="30" alt="">
 						</td>
 <!--						<td>{{owner.picture}}</td>-->
 						<td>{{owner.id_card}}</td>
 						<td>{{owner.telephone}}</td>
 						<td>{{owner.profession}}</td>
-						<td>{{owner.sex}}</td>
-						<td>{{owner.type}}</td>
+						<td>{{owner.sex == '0'? '男' : '女'}}</td>
+						<td>业主</td>
 						<td>{{owner.remark}}</td>
 						<td>{{owner.birthday}}</td>
 						<td>{{owner.password}}</td>
 						<td>{{dateFormat(owner.createTime)}}</td>
 						</td>
 						<td class="td-manage">
-							<a title="编辑" href="javascript:;" onclick="owner_edit('编辑','personnel_add.html','2','1000','600')" class="ml-5" style="text-decoration:none">
+							<a title="编辑" href="javascript:;" @click="owner_edit('编辑','personnel_add.html',owner.id,'1000','600')"
+							 class="ml-5" style="text-decoration:none">
 								<i class="layui-icon">&#xe642;</i>
 							</a>
-							<a title="删除" href="javascript:;" onclick="admin_del(this,'1')" style="text-decoration:none">
+							<a title="删除" href="javascript:;" @click="admin_del(owner.id)" style="text-decoration:none">
 								<i class="layui-icon">&#xe640;</i>
 							</a>
 						</td>
@@ -132,7 +125,7 @@
 				</tbody>
 			</table>
 			<el-pagination background @size-change="handleSizeChange" @current-change="handleCurrentChange" :page-size="searchMap.pageSize"
-			 layout="prev, pager, next,sizes" :page-sizes="[2,10,20]" style="text-align: right;" :total="total">
+			 layout="prev, pager, next,sizes" :page-sizes="[5]" style="text-align: right;" :total="total">
 			</el-pagination>
 
 		</div>
@@ -152,13 +145,14 @@
 				el: "#app", //声明Vue作用域,在html页面上要声明Vue的作用域<div class="x-body" id="app">
 				data: {
 					ownerList: [],
+					selectIds: [],
 					total: 20,
 					searchMap: {
 						"startTime": "",
 						"endTime": "",
 						"name": "",
 						"pageNum": 1,
-						"pageSize": 2
+						"pageSize": 5
 					},
 					selectDate: ['', ''],
 					pickerOptions: {
@@ -190,6 +184,69 @@
 					}
 				},
 				methods: {
+					allChecked: function() {
+						if (this.selectIds.length === this.ownerList.length) {
+							// 全不选
+							this.selectIds = [];
+						} else {
+							this.selectIds = [];
+							// 全选
+							this.ownerList.forEach((item) => {
+								this.selectIds.push(item.id); // 与checkbox的value统一
+							})
+						}
+					},
+					admin_del(id) {
+						this.$confirm('是否永久删除该文件, 是否继续?', '提示', {
+							confirmButtonText: '确定',
+							cancelButtonText: '取消',
+							type: 'warning'
+						}).then(() => {
+							axios.get("/owner/del?id=" + id).then((res) => {
+								if (res.data.flag) {
+									this.$message({
+										type: 'success',
+										message: '删除成功!'
+									});
+									app.searchMap.pageNum = 1;
+									app.search();
+								}
+							});
+						}).catch(() => {
+							this.$message({
+								type: 'info',
+								message: '已取消删除'
+							});
+						});
+					},
+					//多选删除
+					delAll() {
+						this.$confirm('请问您是否要删除选中小区信息?', '提示', {
+							confirmButtonText: '确定',
+							cancelButtonText: '取消',
+							type: 'warning'
+						}).then(() => {
+							//执行删除操作
+							axios.post("/owner/delSelected", this.selectIds).then((res) => {
+								if (res.data.flag) {
+									this.$message({
+										type: 'success',
+										message: '删除成功!'
+									});
+								}
+								//删除成功，把选中的ID列表置为空
+								this.selectIds = [];
+								//把页面置为1，重新获取列表数据
+								this.searchMap.pageNum = 1;
+								this.search();
+							});
+						}).catch(() => {
+							this.$message({
+								type: 'info',
+								message: '已取消删除'
+							});
+						});
+					},
 					//分页条件查询小区列表
 					search() {
 						//ajax异步请求，不需要刷新页面，就可以动态刷新页面数据
@@ -242,7 +299,7 @@
 					},
 					
 					//编辑
-					community_edit(title, url, id, w, h) {
+					owner_edit(title, url, id, w, h) {
 						url = url + "?id=" + id;
 						x_admin_show(title, url, w, h);
 					},

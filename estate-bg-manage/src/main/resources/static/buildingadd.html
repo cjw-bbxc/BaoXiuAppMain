@@ -111,7 +111,7 @@
 						axios.get("/building/findById?id=" + this.building.id).then((res) => {
 							this.building = res.data.data;
 							this.fileList.push({
-								url: "http://localhost/estate" + this.building.thumbnail
+								url: "https://baoxiu.bbxc.xyz/" + this.building.thumbnail
 							});
 						});
 					},

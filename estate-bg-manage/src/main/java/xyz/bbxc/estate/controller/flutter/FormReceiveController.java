@@ -1,12 +1,10 @@
 package xyz.bbxc.estate.controller.flutter;
 
-import com.fasterxml.jackson.databind.JsonNode;
 import net.sf.json.JSONArray;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import xyz.bbxc.estate.damain.Owner;
 import xyz.bbxc.estate.damain.Repaired;
 import xyz.bbxc.estate.service.flutter.FormCommitService;
 import xyz.bbxc.estate.util.DataUtils;

@@ -153,7 +153,7 @@
 						axios.get("/repaired/findById?id=" + this.repaired.id).then((res) => {
 							this.repaired = res.data.data;
 							this.fileList.push({
-								url: "http://localhost/estate" + this.repaired.thumbnail
+								url: "https://baoxiu.bbxc.xyz/" + this.repaired.picture
 							});
 						});
 					},

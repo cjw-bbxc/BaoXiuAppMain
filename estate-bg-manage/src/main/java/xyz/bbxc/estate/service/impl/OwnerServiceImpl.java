@@ -142,4 +142,13 @@ public class OwnerServiceImpl implements OwnerService {
         return ownerMapper.selectByExample(example);
     }
 
+    @Override
+    @Transactional
+    public Boolean deleteSelect(List<Integer> ids) {
+        for (Integer id : ids) {
+            ownerMapper.deleteByPrimaryKey(id);
+        }
+        return true;
+    }
+
 }

@@ -73,13 +73,16 @@ public class RepairedController {
     }
 
     @RequestMapping("/repairUpdateById")
-    public void repairUpdateById(@RequestBody Integer id) {
-        repairedService.repairUpdateById(id);
+    public void repairUpdateById(@RequestBody Map map) {
+        Repaired repaired = new Repaired();
+        repaired.setId((Integer) map.get("id"));
+        repaired.setRepairpicture((String) map.get("repairpicture"));
+        System.out.println(repaired);
+        repairedService.update(repaired);
     }
 
     @RequestMapping("/ownerUpdateById")
     public void ownerUpdateById(@RequestBody Integer id) {
-        System.out.println("1111111");
         repairedService.ownerUpdateById(id);
     }
 
