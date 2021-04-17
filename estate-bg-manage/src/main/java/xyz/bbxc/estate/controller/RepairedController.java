@@ -13,6 +13,9 @@ import xyz.bbxc.estate.common.StatusCode;
 import xyz.bbxc.estate.damain.Repaired;
 import xyz.bbxc.estate.service.RepairedService;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
@@ -73,12 +76,15 @@ public class RepairedController {
     }
 
     @RequestMapping("/repairUpdateById")
-    public void repairUpdateById(@RequestBody Map map) {
+    public void repairUpdateById(@RequestBody Map map, HttpServletRequest request, HttpServletResponse response) throws IOException {
         Repaired repaired = new Repaired();
-        repaired.setId((Integer) map.get("id"));
+        repaired.setId(Integer.parseInt((String) map.get("id")));
         repaired.setRepairpicture((String) map.get("repairpicture"));
         System.out.println(repaired);
-        repairedService.update(repaired);
+        repaired.setStatus("2");
+        Boolean update = repairedService.update(repaired);
+        response.setCharacterEncoding("utf-8");
+        response.getWriter().println(update);
     }
 
     @RequestMapping("/ownerUpdateById")

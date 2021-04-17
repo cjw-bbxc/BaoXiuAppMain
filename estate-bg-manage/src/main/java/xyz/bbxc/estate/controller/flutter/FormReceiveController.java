@@ -70,10 +70,10 @@ public class FormReceiveController {
     @RequestMapping(value = "/ListRepairers")
     public void ListRepairers(@RequestBody String name, HttpServletRequest request, HttpServletResponse response) throws IOException {
         List<Repaired> repairers = formCommitService.searchAllByName(name);
-        response.setCharacterEncoding("utf-8");
 
         JSONArray jsonArray = JSONArray.fromObject(repairers);
         System.out.println(jsonArray);
+        response.setCharacterEncoding("utf-8");
         response.getWriter().println(jsonArray);
     }
 

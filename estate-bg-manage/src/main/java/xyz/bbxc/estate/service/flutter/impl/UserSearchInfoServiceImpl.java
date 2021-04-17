@@ -26,6 +26,7 @@ public class UserSearchInfoServiceImpl implements UserSearchInfoService {
         Owner owner = new Owner();
         owner.setTelephone(phoneNumber);
         owner.setPassword(password);
+        System.out.println("owner:::::::::::::::::::"+owner);
         Owner select = userSearchMapper.selectOne(owner);
         return select;
     }

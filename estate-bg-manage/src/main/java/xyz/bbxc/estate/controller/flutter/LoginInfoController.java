@@ -42,7 +42,7 @@ public class LoginInfoController {
         response.setCharacterEncoding("utf-8");
         JSONObject returnJson = null;
         //验证是否存在
-        Owner searchOwner = userSearchInfoService.search((String) searchMap.get("username"), (String) searchMap.get("password"));
+        Owner searchOwner = userSearchInfoService.search((String) searchMap.get("telephone"), (String) searchMap.get("password"));
 //        System.out.println("查询结束");
         Map returnmap = null;
         if (searchOwner != null) {
