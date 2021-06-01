@@ -173,39 +173,39 @@
                             <tbody>
                             <tr>
                                 <th>服务器计算机名</th>
-                                <td><span id="lbServerName">http://127.0.0.1/</span></td>
+                                <td><span id="lbServerName">https://bbxc.xyz:8888/</span></td>
 
                             </tr>
                             <tr>
-                                <td>服务器IP地址</td>
-                                <td>192.168.1.1</td>
+                                <td>本机地址</td>
+                                <td><p id="ipid"></p></td>
                             </tr>
                             <tr>
                                 <td>服务器域名</td>
-                                <td>www.xxx.net</td>
+                                <td>www.bbxc.xyz</td>
 
                             </tr>
                             <tr>
                                 <td>服务器端口 </td>
-                                <td>80</td>
+                                <td>8888</td>
                             </tr>
                             <tr>
-                                <td>服务器IIS版本 </td>
-                                <td>Microsoft-IIS/6.0</td>
+                                <td>服务器版本 </td>
+                                <td>1.2.4</td>
 
                             </tr>
                             <tr>
                                 <td>本文件所在文件夹 </td>
-                                <td>D:\WebSite\</td>
+                                <td>/www/wwwroot/image.wuye.bbxc.xyz</td>
                             </tr>
                             <tr>
                                 <td>服务器操作系统 </td>
-                                <td>Microsoft Windows NT 5.2.3790 Service Pack 2</td>
+                                <td>Alibaba Cloud Elastic Compute Service</td>
 
                             </tr>
                             <tr>
                                 <td>系统所在文件夹 </td>
-                                <td>C:\WINDOWS\system32</td>
+                                <td>--</td>
                             </tr>
                             <tr>
                                 <td>服务器脚本超时 </td>
@@ -595,7 +595,10 @@
         // 使用刚指定的配置项和数据显示图表。
         myChart.setOption(option);
     </script>
-
+    <script>
+        var ip =  window.location.host;
+        document.getElementById("ipid").innerText = ip;
+    </script>
             
         </div>
         <div class="layui-footer footer footer-demo">

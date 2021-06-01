@@ -6,7 +6,7 @@ import tk.mybatis.spring.annotation.MapperScan;
 
 /**
  * @Auth: zhuan
- * @Desc: 黑马智慧物业管理系统-springBoot引导类
+ * @Desc: 物业管理系统-springBoot引导类
  */
 @SpringBootApplication
 @MapperScan(basePackages = {"xyz.bbxc.estate.dao"}) //扫描继承了TKMapper Mapper<T>接口的接口

@@ -49,7 +49,7 @@ public class FormImageController {
 //		String imageName = request.getParameter("name");
 //		System.out.println("原名称"+imageName);
 		// 最大文件大小
-		long maxSize = 16000000; //10M
+		long maxSize = 20971520; //20M
 		response.setContentType("text/html; charset=UTF-8");
 		if (!ServletFileUpload.isMultipartContent(request)) {
 			return new Result(false, StatusCode.ERROR, MessageConstant.NO_FILE_SELECTED);
