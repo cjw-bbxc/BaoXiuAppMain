@@ -138,7 +138,7 @@
             findById(){
                 axios.get("/community/findById?id="+this.community.id).then((res)=>{
                     this.community = res.data.data;
-                    this.fileList.push({url:"https://wuye.bbxc.xyz/"+this.community.thumbnail});
+                    this.fileList.push({url:"https://baoxiu.bbxc.xyz/"+this.community.thumbnail});
                 });
             },
             handleSuccess(response, file, fileList){
