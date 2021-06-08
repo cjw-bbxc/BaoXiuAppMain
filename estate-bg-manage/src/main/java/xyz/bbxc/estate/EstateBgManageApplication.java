@@ -5,8 +5,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import tk.mybatis.spring.annotation.MapperScan;
 
 /**
- * @Auth: zhuan
- * @Desc: 物业管理系统-springBoot引导类
+ * @Auth: 白白小草
+ * @Desc: 在线报修APP后台管理-springBoot引导类
  */
 @SpringBootApplication
 @MapperScan(basePackages = {"xyz.bbxc.estate.dao"}) //扫描继承了TKMapper Mapper<T>接口的接口
