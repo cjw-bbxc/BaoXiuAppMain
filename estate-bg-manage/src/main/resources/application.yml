@@ -10,6 +10,7 @@ spring:
     name: goods
   datasource: #连接数据库配置
     driver-class-name: com.mysql.cj.jdbc.Driver
+    # 使用域名进行连接
     url: jdbc:mysql://bbxc.xyz:3306/baoxiuapp?useUnicode=true&characterEncoding=utf-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai
     username: root
     password: 123456
