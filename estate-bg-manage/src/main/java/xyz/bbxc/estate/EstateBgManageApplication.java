@@ -15,5 +15,4 @@ public class EstateBgManageApplication {
     public static void main(String[] args) {
         SpringApplication.run(EstateBgManageApplication.class, args);
     }
-
 }
