@@ -7,6 +7,8 @@ package xyz.bbxc.estate.common;
  */
 public class MessageConstant {
     //---------------------------小区（Community）操作消息提示信息---------------------------------------
+    public static final String COMMON_TEST="公共测试！";
+    //---------------------------小区（Community）操作消息提示信息---------------------------------------
     public static final String COMMUNITY_SEARCH_SUCCESS="查询小区列表信息成功！";
     public static final String COMMUNITY_ADD_SUCCESS="新增小区信息成功！";
     public static final String COMMUNITY_UPDATE_SUCCESS="修改小区信息成功！";

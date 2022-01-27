@@ -28,8 +28,4 @@ public class DateUtils {
         return year+"-"+month+"-"+day;
     }
 
-//    public static void main(String[] args) {
-//        System.out.println(UUID.randomUUID()+".jpg");
-//    }
-
 }
