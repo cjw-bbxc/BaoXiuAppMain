@@ -32,7 +32,7 @@
 
             <ul class="layui-nav" lay-filter="">
                 <li class="layui-nav-item" id="time" style="margin-right: 50px;font-weight: 300;font-size: 16px;color: #fff;position: absolute;left: -250px;top: 0"></li>
-                <li class="layui-nav-item"><img src="./images/tx.svg" class="layui-circle" " width="35px" height="35px" alt=""></li>
+                <li class="layui-nav-item"><img src="./images/tx.svg" class="layui-circle" width="35px" height="35px" alt=""></li>
 
                 <li class="layui-nav-item"> <a href="javascript:;">admin</a>
                     <dl class="layui-nav-child">
@@ -49,8 +49,6 @@
     </div>
 
     <!--左侧导航区域-->
-
-
     <div class="layui-side layui-bg-black x-side show_list" style="left:0px;" id="table1">
         <div class="layui-side-scroll">
 
@@ -131,7 +129,6 @@
             </ul>
         </div>
     </div>
-
 
     <div class="layui-side layui-bg-black x-side hide_lits" style="left:0px;" id="table2">
         <div style="height: 130px; width: 220px; ">
@@ -270,13 +267,13 @@
     });
     /**
      * 退出登陆
-     * 2019年8月17日19:43:15
+     * 2022年1月27日10:31:28
      */
     function logout() {
 
         $.ajax({
             type:"post",
-            url:"xxxxx",
+            url:"xxxx",
             data:{e:1},
             dataType:"json",
             success:function (data) {
