@@ -32,7 +32,7 @@ public class FormImageController {
 	 * @param file	上传文件的参数名，必须和前端参数名称一致
 	 * @param request	请求对象
 	 * @param response 	响应对象
-	 * @return : com.heima.estatemanagement.common.Result
+	 * @return :  xyz.bbxc.estate.common.Result
 	 */
 	@RequestMapping(value="/imageupload")
 	public Result uploadImage(@RequestParam("file")MultipartFile file, HttpServletRequest request,HttpServletResponse response) throws IOException {
