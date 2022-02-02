@@ -13,7 +13,7 @@ spring:
     # 使用域名进行连接
     url: jdbc:mysql://bbxc.xyz:3306/baoxiuapp?useUnicode=true&characterEncoding=utf-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai
     username: root
-    password: 123456
+    password: cjw1765152390
     hikari:
       minimum-idle: 3
       maximum-pool-size: 100
