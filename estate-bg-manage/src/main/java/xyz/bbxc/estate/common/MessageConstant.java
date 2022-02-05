@@ -6,7 +6,7 @@ package xyz.bbxc.estate.common;
  * @DateTime: 2022/2/5 14:47:20
  */
 public class MessageConstant {
-    //---------------------------小区（Community）操作消息提示信息---------------------------------------
+    //---------------------------测试（Test）提示信息---------------------------------------
 //    public static final String COMMON_TEST="公共测试！";
     //---------------------------小区（Community）操作消息提示信息---------------------------------------
     public static final String COMMUNITY_SEARCH_SUCCESS="查询小区列表信息成功！";

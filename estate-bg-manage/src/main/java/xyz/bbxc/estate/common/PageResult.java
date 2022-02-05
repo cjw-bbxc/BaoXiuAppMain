@@ -46,7 +46,6 @@ public class PageResult implements Serializable {
 
     /**
      * 设置flag
-     * @param flag
      */
     public void setFlag(boolean flag) {
         this.flag = flag;
@@ -76,10 +75,16 @@ public class PageResult implements Serializable {
         this.data = data;
     }
 
+    /**
+     * 获取总量
+     */
     public Long getTotal() {
         return total;
     }
 
+    /**
+     * 设置总量
+     */
     public void setTotal(Long total) {
         this.total = total;
     }
