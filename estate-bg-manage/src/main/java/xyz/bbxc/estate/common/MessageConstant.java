@@ -3,7 +3,7 @@ package xyz.bbxc.estate.common;
 /**
  * @Auth: 白白小草
  * @Desc: 返回结果消息提示常量类
- * @DateTime: 2020/12/13 15:12
+ * @DateTime: 2022/2/5 14:47:20
  */
 public class MessageConstant {
     //---------------------------小区（Community）操作消息提示信息---------------------------------------
