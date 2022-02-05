@@ -37,7 +37,7 @@ public class PageResult implements Serializable {
     }
 
     /**
-     * 判断
+     * 判断flag状态
      * @return 布尔
      */
     public boolean isFlag() {
@@ -45,7 +45,7 @@ public class PageResult implements Serializable {
     }
 
     /**
-     *
+     * 设置flag
      * @param flag
      */
     public void setFlag(boolean flag) {
