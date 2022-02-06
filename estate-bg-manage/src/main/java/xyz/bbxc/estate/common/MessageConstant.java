@@ -41,10 +41,10 @@ public class MessageConstant {
     public static final String BUILDING_ADD_SUCCESS="新增楼栋信息成功！";
     public static final String BUILDING_UPDATE_SUCCESS="修改楼栋信息成功！";
     public static final String BUILDING_DELETE_SUCCESS="删除楼栋信息成功！";
-    public static final String BUILDING_PIC_UPLOAD_SUCCESS="楼栋缩略图上传成功！";
-    public static final String BUILDING_PIC_DEL_SUCCESS = "楼栋缩略图删除成功！";
+//    public static final String BUILDING_PIC_UPLOAD_SUCCESS="楼栋缩略图上传成功！";
+//    public static final String BUILDING_PIC_DEL_SUCCESS = "楼栋缩略图删除成功！";
     public static final String BUILDING_FIND_BY_ID_SUCCESS = "根据主键获取楼栋对象成功！";
-    public static final String BUILDING_UPDATE_STATUS_SUCCESS = "楼栋状态信息更新成功！";
+//    public static final String BUILDING_UPDATE_STATUS_SUCCESS = "楼栋状态信息更新成功！";
 
     //---------------------------房产（House）操作消息提示信息---------------------------------------
     public static final String HOUSE_SEARCH_SUCCESS="查询房产列表信息成功！";
