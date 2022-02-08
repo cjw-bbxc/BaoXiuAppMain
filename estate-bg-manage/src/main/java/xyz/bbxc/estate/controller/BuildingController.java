@@ -42,7 +42,6 @@ public class BuildingController {
     /**
      * 根据 所属小区名称 查询所有所属该 小区 的楼栋数
      * @param name
-     * @return
      */
     @RequestMapping("/searchBycommunityName")
     public Result searchBycommunityName(String name) {
