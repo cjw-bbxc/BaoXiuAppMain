@@ -2,7 +2,6 @@ package xyz.bbxc.estate.service;
 
 import com.github.pagehelper.Page;
 import xyz.bbxc.estate.damain.Building;
-import xyz.bbxc.estate.damain.Building;
 
 import java.util.List;
 import java.util.Map;

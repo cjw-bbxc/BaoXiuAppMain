@@ -55,10 +55,8 @@ public class BuildingController {
 
     @RequestMapping("/add")
     public Result add(@RequestBody Building building) {
-//        System.out.println("add Building:"+building);
         int communityid = communityController.getcommunityid(building.getCommunityName());
         building.setCommunityId(communityid);
-//        System.out.println("building---------"+building);
         buildingService.add(building);
         return new Result(true, StatusCode.OK, MessageConstant.BUILDING_ADD_SUCCESS);
     }
