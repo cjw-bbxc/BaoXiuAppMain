@@ -12,7 +12,9 @@ import java.util.Date;
  */
 @Table(name="tb_car")
 public class Car implements Serializable {
+
     private static final long serialVersionUID = 3724537317518673618L;
+
     @Id
     private Integer id;
     private String picture;
