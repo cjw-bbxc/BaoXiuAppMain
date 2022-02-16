@@ -92,17 +92,17 @@ public class Car implements Serializable {
         this.updateTime = updateTime;
     }
 
-    @Override
-    public String toString() {
-        return "Car{" +
-                "id=" + id +
-                ", picture='" + picture + '\'' +
-                ", ownerId=" + ownerId +
-                ", color='" + color + '\'' +
-                ", carNumber='" + carNumber + '\'' +
-                ", remark='" + remark + '\'' +
-                ", createTime=" + createTime +
-                ", updateTime=" + updateTime +
-                '}';
-    }
+//    @Override
+//    public String toString() {
+//        return "Car{" +
+//                "id=" + id +
+//                ", picture='" + picture + '\'' +
+//                ", ownerId=" + ownerId +
+//                ", color='" + color + '\'' +
+//                ", carNumber='" + carNumber + '\'' +
+//                ", remark='" + remark + '\'' +
+//                ", createTime=" + createTime +
+//                ", updateTime=" + updateTime +
+//                '}';
+//    }
 }
