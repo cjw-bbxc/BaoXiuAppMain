@@ -83,7 +83,7 @@ public class FormReceiveController {
         response.setCharacterEncoding("utf-8");
 
         JSONArray jsonArray = JSONArray.fromObject(repairers);
-        System.out.println(jsonArray);
+//        System.out.println(jsonArray);
         response.getWriter().println(jsonArray);
     }
 }
