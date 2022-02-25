@@ -31,7 +31,7 @@ public class MessageConstant {
     public static final String OWNER_ADD_SUCCESS="新增业主信息成功！";
     public static final String OWNER_UPDATE_SUCCESS="修改业主信息成功！";
     public static final String OWNER_DELETE_SUCCESS="删除业主信息成功！";
-    public static final String OWNER_PIC_UPLOAD_SUCCESS="业主缩略图上传成功！";
+//    public static final String OWNER_PIC_UPLOAD_SUCCESS="业主缩略图上传成功！";
     public static final String OWNER_PIC_DEL_SUCCESS = "业主缩略图删除成功！";
     public static final String OWNER_FIND_BY_ID_SUCCESS = "根据主键获取业主对象成功！";
     public static final String OWNER_UPDATE_STATUS_SUCCESS = "业主状态信息更新成功！";
