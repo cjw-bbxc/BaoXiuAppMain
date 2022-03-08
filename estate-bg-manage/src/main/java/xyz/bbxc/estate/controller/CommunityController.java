@@ -37,13 +37,13 @@ public class CommunityController {
     @RequestMapping("/searchAll")
     public Result searchAll() {
         List<Community> communityList = communityService.searchAll();
-//        System.out.println("ListAll Community:"+communityList);
+        System.out.println("ListAll Community:"+communityList);
         return new Result(true,StatusCode.OK,MessageConstant.COMMUNITY_SEARCH_SUCCESS,communityList);
     }
 
     @RequestMapping("/add")
     public Result add(@RequestBody Community community) {
-//        System.out.println("add Community:"+community);
+        System.out.println("add Community:"+community);
         communityService.add(community);
         return new Result(true, StatusCode.OK, MessageConstant.COMMUNITY_ADD_SUCCESS);
     }
