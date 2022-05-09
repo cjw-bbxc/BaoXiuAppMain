@@ -34,7 +34,6 @@ public class MessageConstant {
     public static final String OWNER_PIC_UPLOAD_SUCCESS="业主缩略图上传成功！";
     public static final String OWNER_PIC_DEL_SUCCESS = "业主缩略图删除成功！";
     public static final String OWNER_FIND_BY_ID_SUCCESS = "根据主键获取业主对象成功！";
-    public static final String OWNER_UPDATE_STATUS_SUCCESS = "业主状态信息更新成功！";
 
     //---------------------------楼栋（Building）操作消息提示信息---------------------------------------
     public static final String BUILDING_SEARCH_SUCCESS="查询楼栋列表信息成功！";
